@@ -7,6 +7,9 @@ app_description = "Customisations for ERPNext 14"
 app_email = "social@ncc.gov.gh"
 app_license = "MIT"
 
+
+fixtures = ['Custom Field']
+
 # Includes in <head>
 # ------------------
 
