@@ -33,7 +33,7 @@ fixtures = [
                 "year",
                 "type",
                 "tyre_type",
-                "image",
+                "vehicle_image",
                 "column_break_7",
                 "section_break_4",
                 "department",
