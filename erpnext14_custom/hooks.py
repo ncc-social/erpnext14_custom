@@ -8,7 +8,62 @@ app_email = "social@ncc.gov.gh"
 app_license = "MIT"
 
 
-fixtures = ['Custom Field']
+fixtures = [
+    {"dt": "Property Setter", "filters": [
+        [
+            "doc_type", "in", [
+                "Employee",
+                "Leave Application",
+                "Leave Type",
+                "Training Event",
+                "Vehicle",
+                "Notification",
+                "Print Format"
+            ]
+        ]
+    ]},
+    {"dt": "Custom Field", "filters": [
+        [
+            "fieldname", "in", [
+                "assumption_of_duty",
+                "acceptance_date",
+                "reports_to_name",
+                "age",
+                "employee_name",
+                "year",
+                "type",
+                "tyre_type",
+                "image",
+                "column_break_7",
+                "section_break_4",
+                "department",
+                "employee_number",
+                "staff_id",
+                "branch",
+                "ssnit",
+                "workflow_state",
+                "additional_cell_number",
+                "status",
+                "ghanacard_details",
+                "personal_id_number",
+                "document_number",
+                "column_break_83",
+                "ghanacard_date_of_issuance",
+                "ghanacard_date_of_expiry"
+            ]
+        ]
+    ]},
+    {"dt": "Client Script", "filters": [
+        [
+            "name", "in", [
+                "Employee-Form",
+                "Vehicle-Form",
+                "Leave Application-Form",
+                "Leave Application-List"
+            ]
+        ]
+    ]}
+]
 
 # Includes in <head>
 # ------------------
