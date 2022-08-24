@@ -1,3 +1,6 @@
+# Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
+# License: GNU General Public License v3. See license.txt
+
 from typing import Dict, Optional, Tuple
 
 import frappe
@@ -29,8 +32,9 @@ from hrms.hr.utils import (
 )
 
 def after_approval(self):
-	if self.status == "Open":
-		frappe.throw(_("Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"))
+    if self.status == "Open":
+			frappe.throw(_("Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"))
+
 	self.validate_back_dated_application()
 
 	# notify leave applier about approval
