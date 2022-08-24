@@ -33,16 +33,16 @@ from hrms.hr.utils import (
 
 def after_approval(self):
     if self.status == "Open":
-	frappe.throw(_("Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"))
+        frappe.throw(_("Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"))
 
-	self.validate_back_dated_application()
+    self.validate_back_dated_application()
 
 	# notify leave applier about approval
-	if frappe.db.get_single_value("HR Settings", "send_leave_notification"):
-		self.notify_employee()
+    if frappe.db.get_single_value("HR Settings", "send_leave_notification"):
+        self.notify_employee()
 
-	self.create_leave_ledger_entry()
-	self.reload()
+    self.create_leave_ledger_entry()
+    self.reload()
 
 def validate_back_dated_application(self):
     future_allocation = frappe.db.sql("""select name, from_date from `tabLeave Allocation`
