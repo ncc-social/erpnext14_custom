@@ -33,7 +33,7 @@ from hrms.hr.utils import (
 
 def after_approval(self):
     if self.status == "Open":
-		frappe.throw(_("Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"))
+	frappe.throw(_("Only Leave Applications with status 'Approved' and 'Rejected' can be submitted"))
 
 	self.validate_back_dated_application()
 
