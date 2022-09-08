@@ -42,5 +42,16 @@
   "name": "Leave Application-List",
   "script": "frappe.listview_settings['Leave Application'] = frappe.listview_settings['Leave Application'] || {};\nfrappe.listview_settings['Leave Application'] = {\n    // add fields to fetch\n    add_fields: ['employee_name', 'leave_type', 'from_date', 'to_date', 'status'],\n    \n    hide_name_column: true, // hide the last column which shows the `name`\n    \n    // add a custom button for each row\n    button: {\n        show(doc) {\n            return doc.docstatus == 1;\n        },\n        get_label() {\n            return 'View';\n        },\n        get_description(doc) {\n            //return __('View {0}', [`${doc.name}`])\n            return __('View Details')\n        },\n        action(doc) {\n            frappe.set_route('Form', 'Leave Application', doc.name);\n        }\n    }\n}",
   "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Leave Application",
+  "enabled": 0,
+  "modified": "2022-09-07 09:18:34.194446",
+  "module": "Erpnext14 Custom",
+  "name": "Send SMS for Leave Application",
+  "script": "frappe.ui.form.on(\"Leave Application\", \"on_submit\", function(frm, cdt, cdn) {\n\tvar message = \"\";\n\tif (frm.doc.workflow_state == \"Leave REJECTED\") {\n\t\tmessage = 'Your leave application for ' + frm.doc.total_leave_days + ' days has been REJECTED';\n\t} else if (frm.doc.workflow_state == \"Leave APPROVED\") {\n\t\tmessage = 'Your leave application for ' + frm.doc.total_leave_days + ' days has been APPROVED';\n\t}\n\tfrappe.call({\n\t\tmethod: \"frappe.core.doctype.sms_settings.sms_settings.send_sms\",\n\t\targs: {\n\t\t\treceiver_list: [frm.doc.cell_number],\n\t\t\tmsg: message,\n\t\t},\n\t\tcallback: function(r) {\n\t\t\tif (r.exc) {\n\t\t\t\tmsgprint(r.exc);\n\t\t\t\treturn;\n\t\t\t}\n\t\t}\n\t});\n})",
+  "view": "Form"
  }
 ]
