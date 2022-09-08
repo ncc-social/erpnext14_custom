@@ -59,7 +59,16 @@ fixtures = [
                 "Employee-Form",
                 "Vehicle-Form",
                 "Leave Application-Form",
-                "Leave Application-List"
+                "Leave Application-List",
+                "Send SMS for Leave Application",
+
+            ]
+        ]
+    ]},
+    {"dt": "Server Script", "filters": [
+        [
+            "name", "in", [
+                "Full Name of User"
             ]
         ]
     ]}
