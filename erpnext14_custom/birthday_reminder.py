@@ -46,7 +46,7 @@ def get_birthday_reminder_text_and_message(birthday_persons):
 	reminder_text = _("{0}, today is your birthday 🎉").format(birthday_person_text)
 	message = _("The Director-General and the entire staff of the Commission wish you a happy birthday.")
 	message += "<br>"
-	message += _("May the good LORD continue to bless you with long life and good health.")
+	message += _("May GOD continue to bless you with long life and good health.")
 	message += "<br>"
 	message += _("Hope this special day brings you all that your heart desires.")
 
