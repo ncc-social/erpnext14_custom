@@ -18,7 +18,8 @@ fixtures = [
                 "Training Event",
                 "Vehicle",
                 "Notification",
-                "Print Format"
+                "Print Format",
+                "Issue"
             ]
         ]
     ]},
@@ -49,7 +50,8 @@ fixtures = [
                 "document_number",
                 "column_break_83",
                 "ghanacard_date_of_issuance",
-                "ghanacard_date_of_expiry"
+                "ghanacard_date_of_expiry",
+                "employee"
             ]
         ]
     ]},
@@ -60,7 +62,7 @@ fixtures = [
                 "Vehicle-Form",
                 "Leave Application-Form",
                 "Leave Application-List",
-                "Send SMS for Leave Application",
+                "Send SMS for Leave Application"
 
             ]
         ]
