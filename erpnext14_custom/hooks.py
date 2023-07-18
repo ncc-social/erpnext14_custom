@@ -19,7 +19,8 @@ fixtures = [
                 "Vehicle",
                 "Notification",
                 "Print Format",
-                "Issue"
+                "Issue",
+                "User"
             ]
         ]
     ]},
